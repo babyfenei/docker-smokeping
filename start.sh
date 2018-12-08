@@ -48,9 +48,9 @@ if [ ! -f /smokeping/install.lock ]; then
 	sed -i "/SmokePing Latency Page for/s/SmokePing Latency Page for/Smokeping 网络质量监测工具 - /" /smokeping/etc/basepage.html
 	sed -i "/Running on/s/Running on/Running on Docker \<a href\=\"https:\/\/hub.docker.com\/r\/babyfenei\/smokeping\/\"\>babyfenei\/smokeping/" /smokeping/etc/basepage.html
 	sed -i "s/EMAIL_TO/$EMAIL_TO/g" /smokeping/bin/send_mail.sh
-	sed -i "s/EMAIL_FROM/$EMAIL_FROM/g" /smokeping/bin/send_mail.sh
 	sed -i "s/EMAIL_FROM_PASSWORD/$EMAIL_FROM_PASSWORD/g" /smokeping/bin/send_mail.sh
 	sed -i "s/EMAIL_FROM_SMTP/$EMAIL_FROM_PASSWORD/g" /smokeping/bin/send_mail.sh
+	sed -i "s/EMAIL_FROM/$EMAIL_FROM/g" /smokeping/bin/send_mail.sh
 	sed -i "s#RRDTOOL_LOGO#$RRDTOOL_LOGO#g" /smokeping/bin/send_mail.sh
 	ln -s /smokeping/bin/* /usr/sbin/
  # CLEANUP
