@@ -44,6 +44,8 @@ ln -s /usr/local/python3/bin/pip3  /usr/bin/pip && \
 sed -i '1c #!/usr/bin/python2' /usr/bin/yum && \
 sed -i '1c #!/usr/bin/python2' /usr/libexec/urlgrabber-ext-down && \
 rm -rf Python-3.6.6.tar.gz && rm -rf Python-3.6.6 && \
+pip install --upgrade pip && \
+pip install zmail && \
 ln -s /usr/local/sbin/fping /usr/sbin/fping && \
 ln -s /usr/local/bin/echoping /usr/sbin/echoping
 

@@ -67,23 +67,35 @@ else
 fi
 
 
-if [ ! -f /etc/httpd/conf.d/smokeping.conf ]; then
-	cp -rf  /scripts/smokeping.conf /etc/httpd/conf.d/
-fi
-
 if [ ! -f /usr/bin/tcpping ]; then
 	cp -rf /scripts/tcpping /usr/bin/ && chmod 777 /usr/bin/tcpping
 fi
 
+# create htpasswd  file
+if [ ! -f /etc/httpd/conf.d/smokeping.conf ]; then
+	if  [ -n "$HTTP_USER" ] && [ -n "$HTTP_PASSWORD" ] ;then
+		echo "$(date +%F_%R) [Note] Copy http config."
+		echo "$(date +%F_%R) [Note] Create htpasswd file."
+		cp -rf /scripts/smokeping_auth.conf /etc/httpd/conf.d/smokeping.conf
+		echo "htpasswd -bc /smokeping/etc/htpasswd HTTP_USER HTTP_PASSWORD" > /smokeping/bin/create_user.sh
+		sed -i "s/HTTP_USER/$HTTP_USER/g" /etc/httpd/conf.d/smokeping.conf
+		sed -i "s/HTTP_USER/$HTTP_USER/g" /smokeping/bin/create_user.sh
+		sed -i "s/HTTP_PASSWORD/$HTTP_PASSWORD/g" /smokeping/bin/create_user.sh
+		bash /smokeping/bin/create_user.sh
+		chmod 600 /smokeping/etc/htpasswd
+	else
+		echo "$(date +%F_%R) [Note] Copy http config."
+		cp -rf /scripts/smokeping.conf /etc/httpd/conf.d/smokeping.conf
+	fi
+fi
+
 # correcting file permissions
 echo "$(date +%F_%R) [Note] Setting smokeping file permissions."
-chown -R apache:apache /smokeping/
-chown apache:apache /smokeping/etc/smokeping_secrets
 chmod 600 /smokeping/etc/smokeping_secrets
-chown apache:apache /smokeping/etc/slavesecrets
 chmod 600 /smokeping/etc/slavesecrets
 chmod +x /smokeping/bin/send_mail.sh
 chmod +x /smokeping/bin/mailz.py
+chown -R apache:apache /smokeping/
 
 # start syslog service
 echo "$(date +%F_%R) [Note] Starting smokeping service."
