@@ -46,9 +46,9 @@ echo "RTT Pattern: " $rtt | tee -a ${smokeping_mail_content}
 echo "Hostname: " $hostname | tee -a ${smokeping_mail_content}
 echo -e "\n" | tee -a ${smokeping_mail_content}
 echo "----------------MTR--------------------" | tee -a ${smokeping_mail_content}
-#echo "SOURCE IP :$SRC_IP  DESTENT IP :$DET_IP"|nali | tee -a ${smokeping_mail_content}
-echo "SOURCE IP :$SRC_IP  DESTENT IP :$DET_IP"| tee -a ${smokeping_mail_content}
-mtr --no-dns  -r -c3 -w -b $DET_IP | column -s "]" -s " " -s "[" | column -t |grep -v "对方和您在
+echo "SOURCE IP :$SRC_IP  DESTENT IP :$DET_IP"|nali | tee -a ${smokeping_mail_content}
+#echo "SOURCE IP :$SRC_IP  DESTENT IP :$DET_IP"| tee -a ${smokeping_mail_content}
+mtr --no-dns  -r -c3 -w -b $DET_IP |nali| column -s "]" -s " " -s "[" | column -t |grep -v "对方和您在
 同一内部网" | tee -a ${smokeping_mail_content}
 echo -e "\n" | tee -a ${smokeping_mail_content}
 echo "----------------PING-------------------" | tee -a ${smokeping_mail_content}
@@ -68,11 +68,14 @@ if [[ -z $invoke_info ]] ;then
 echo "$(date +%F-%T):mail has been send **************************************!" >> $invoke_file
 echo $@ >> $invoke_file
 #cat $smokeping_mail_content |mail -s "$subject" $email_to
-python /smokeping/bin/mailz.py "$subject" "$content_send" "$smokeping_mail_content" >> $mail_send_log 2>&1
+#python /smokeping/bin/mailz.py "$subject" "$content_send" "$smokeping_mail_content" >> $mail_send_log 2>&1
+/bin/bash /smokeping/bin/maily.sh "$subject" "$content_send" "$smokeping_mail_content" >> $mail_send_log 2>&1
+
 exit
 else
 echo "$(date +%F-%T):mail not send #####################################" >> $invoke_file
 #python /smokeping/bin/mailz.py "$subject" "$content_send" "$smokeping_mail_content" >> $mail_send_log 2>&1
+#/bin/bash /smokeping/bin/maily.sh "$subject" "$content_send" "$smokeping_mail_content" >> $mail_send_log 2>&1
 echo $@ >> $invoke_file
 exit
 fi

@@ -41,6 +41,8 @@ if [ ! -f /smokeping/install.lock ]; then
         cp -rf /scripts/targets /smokeping/etc/
         cp -rf /scripts/send_mail.sh /smokeping/bin/ 
         cp -rf /scripts/mailz.py /smokeping/bin/
+        cp -rf /scripts/maily.sh /smokeping/bin/
+        cp -rf /scripts/sendEmail /usr/bin/
 	cp -rf /scripts/smokeping_secrets /smokeping/etc/smokeping_secrets
 	cp -rf /scripts/slavesecrets /smokeping/etc/slavesecrets
 	sed -i "160i \'--font\'\, \"TITLE:20:WenQuanYi Zen Hei Mono\"\," /smokeping/lib/Smokeping/Graphs.pm
@@ -50,6 +52,11 @@ if [ ! -f /smokeping/install.lock ]; then
 	sed -i "s/MAIL_TO/$MAIL_TO/g" /smokeping/bin/mailz.py
 	sed -i "s/MAIL_FROM_PASSWORD/$MAIL_FROM_PASSWORD/g" /smokeping/bin/mailz.py
 	sed -i "s/MAIL_FROM/$MAIL_FROM/g" /smokeping/bin/mailz.py
+	sed -i "s/MAIL_TO/$MAIL_TO/g" /smokeping/bin/maily.sh
+	sed -i "s/MAIL_FROM_PASSWORD/$MAIL_FROM_PASSWORD/g" /smokeping/bin/maily.sh
+	sed -i "s/MAIL_FROM_SERVER/$MAIL_FROM_SERVER/g" /smokeping/bin/maily.sh
+	sed -i "s/MAIL_FROM/$MAIL_FROM/g" /smokeping/bin/maily.sh
+	
 	sed -i "s#RRDTOOL_LOGO#$RRDTOOL_LOGO#g" /smokeping/bin/send_mail.sh
 	ln -s /smokeping/bin/* /usr/sbin/
  # CLEANUP
@@ -94,6 +101,8 @@ chmod 600 /smokeping/etc/smokeping_secrets
 chmod 600 /smokeping/etc/slavesecrets
 chmod +x /smokeping/bin/send_mail.sh
 chmod +x /smokeping/bin/mailz.py
+chmod +x /smokeping/bin/maily.sh
+chmod +x /usr/bin/sendEmail
 chown -R apache:apache /smokeping/
 
 # start syslog service

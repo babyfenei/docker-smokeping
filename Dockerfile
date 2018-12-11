@@ -34,29 +34,30 @@ cd /build && tar xvf fping-4.0.tar.gz && cd fping-4.0 && ./configure && make && 
 # 编译安装 Echoping
 cd /build && tar xvf echoping-6.0.2.tar.gz && cd echoping-6.0.2 && ./configure && make && make install && rm -rf /build/echoping* && \
 # 编译安装 nali
-#cd /build && tar -xf nali.tar.gz && cd nali && ./configure && make && make install && rm -rf /build/nali*
+cd /build && tar -xf nali.tar.gz && cd nali && ./configure && make && make install && rm -rf /build/nali* 
 # 编译安装python3
-cd /build && tar -xf  Python-3.6.6.tar.gz && cd Python-3.6.6 && \
-./configure prefix=/usr/local/python3 && \
-make && make install && \
-mv -f $pythonpath ${pythonpath}.bak && \
-ln -s /usr/local/python3/bin/python3 $pythonpath && \
-rm -f /usr/bin/pip && \
-ln -s /usr/local/python3/bin/pip3  /usr/bin/pip && \
-sed -i '1c #!/usr/bin/python2' /usr/bin/yum && \
-sed -i '1c #!/usr/bin/python2' /usr/libexec/urlgrabber-ext-down && \
-rm -rf Python-3.6.6.tar.gz && rm -rf Python-3.6.6 && \
-pip install --upgrade pip && \
-pip install zmail && \
-ln -s /usr/local/sbin/fping /usr/sbin/fping && \
-ln -s /usr/local/bin/echoping /usr/sbin/echoping
+#RUN \
+#cd /build && tar -xf  Python-3.6.6.tar.gz && cd Python-3.6.6 && \
+#./configure prefix=/usr/local/python3 && \
+#make && make install && \
+#mv -f $pythonpath ${pythonpath}.bak && \
+#ln -s /usr/local/python3/bin/python3 $pythonpath && \
+#rm -f /usr/bin/pip && \
+#ln -s /usr/local/python3/bin/pip3  /usr/bin/pip && \
+#sed -i '1c #!/usr/bin/python2' /usr/bin/yum && \
+#sed -i '1c #!/usr/bin/python2' /usr/libexec/urlgrabber-ext-down && \
+#rm -rf Python-3.6.6.tar.gz && rm -rf Python-3.6.6 && \
+#pip install --upgrade pip && \
+#pip install zmail && \
+#ln -s /usr/local/sbin/fping /usr/sbin/fping && \
+#ln -s /usr/local/bin/echoping /usr/sbin/echoping
 
 
 ENV 	RRDTOOL_LOGO=Docker-Smokeping2.7.2/rrdtool1.4.9-BY:Fenei \
 	MAIL_TO=alert@mail.com \
-	MAIL_FROM=alert_from@mail.com \
+	MAIL_FROM=alert_from@qq.com \
 	MAIL_FROM_PASSWORD=somepassword
-
+	MAIL_FROM_SERVER=smtp.qq.com:587
 
 EXPOSE 80 443
 
