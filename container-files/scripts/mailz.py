@@ -1,18 +1,18 @@
 import zmail
 import sys
 
-def send_mail(SUBJECT,CONTENT,MAIL_TO,MAIL_FROM,MAIL_PASSWORD):
-        with open(CONTENT,'r') as f:
-                content_text = f.read()
+def send_mail(SUBJECT,CONTENT,CONTENT_FILE):
+        #with open(CONTENT,'r') as f:
+        #        content_text = f.read()
 
         mail = {
                 'subject': SUBJECT,
-                'content_text': content_text,
+                'content_text': CONTENT,
                 #'content_html': content_html,
-                'attachments': CONTENT
+                'attachments': CONTENT_FILE
                 }
 
-        server = zmail.server(MAIL_FROM,MAIL_PASSWORD)
-        server.send_mail(MAIL_TO, mail)
+        server = zmail.server('MAIL_FROM','MAIL_FROM_PASSWORD')
+        server.send_mail('MAIL_TO', mail)
 
-send_mail(sys.argv[1], sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
+send_mail(sys.argv[1], sys.argv[2], sys.argv[3])

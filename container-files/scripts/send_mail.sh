@@ -14,13 +14,9 @@ DET_IP=$5
 # 自定义变量
 
 smokename="RRDTOOL_LOGO"
-smokeping_mail_content=/smokeping/smokeping_mail_content.txt
-email_from="EMAIL_FROM"
-email_server="EMAIL_FROM_SMTP"
-email_from_password="EMAIL_FROM_PASSWORD"
-email_to="EMAIL_TO"
-
-
+smokeping_mail_content=/smokeping/log/smokeping_mail_content.log
+invoke_file=/smokeping/log/invoke.log
+mail_send_log=/smokeping/log/send.log
 
 
 # 把所有传过来的变量输出到脚本调用日志里，方便统计和问题排查
@@ -32,11 +28,12 @@ if [ "$losspattern" = "loss: 0%" ];
 then
     subject="Clear-Smokeping-${SRC_IP}-Alert:${target}:${hostname}"
 else
-    subject="Alert-Smokeping-${SRC_IP}-Alert:${target}–${hostname}"
+    subject="Alert-Smokeping-${SRC_IP}-Alert:${target}:${hostname}"
 fi
 
 # generate mail content
 # 清空并重新生成邮件内容
+touch ${smokeping_mail_content}
 >${smokeping_mail_content}
 
 echo -e "\n" | tee -a ${smokeping_mail_content}
@@ -49,25 +46,33 @@ echo "RTT Pattern: " $rtt | tee -a ${smokeping_mail_content}
 echo "Hostname: " $hostname | tee -a ${smokeping_mail_content}
 echo -e "\n" | tee -a ${smokeping_mail_content}
 echo "----------------MTR--------------------" | tee -a ${smokeping_mail_content}
-echo "SOURCE IP :$SRC_IP  DESTENT IP :$DET_IP"|nali | tee -a ${smokeping_mail_content}
-mtr --no-dns  -r -c3 -w -b $DET_IP | nali | column -s "]" -s " " -s "[" | column -t |grep -v "对方和您在
+#echo "SOURCE IP :$SRC_IP  DESTENT IP :$DET_IP"|nali | tee -a ${smokeping_mail_content}
+echo "SOURCE IP :$SRC_IP  DESTENT IP :$DET_IP"| tee -a ${smokeping_mail_content}
+mtr --no-dns  -r -c3 -w -b $DET_IP | column -s "]" -s " " -s "[" | column -t |grep -v "对方和您在
 同一内部网" | tee -a ${smokeping_mail_content}
 echo -e "\n" | tee -a ${smokeping_mail_content}
 echo "----------------PING-------------------" | tee -a ${smokeping_mail_content}
 ping -c 10 -i 0.5 $hostname |tail -n 3 | tee -a ${smokeping_mail_content}
 echo -e "\n" | tee -a ${smokeping_mail_content}
 echo "This message was send by $SRC_IP Smokeping Server. By Fenei From AMSINPUL. " | tee -a ${smokeping_mail_content}
+# 创建invoke文件
+if [ ! -f $invoke_file ]; then
+        touch $invoke_file
+fi
+content_send=`cat $smokeping_mail_content`
+
 # 判断最近10次报警是否包含本次报警主机
-invoke_info=`cat invoke.log | tail -5 | grep -w $hostname`
+invoke_info=`cat $invoke_file | tail -5 | grep -w $hostname`
 #如果包含退出脚本，不包含则发送邮件
 if [[ -z $invoke_info ]] ;then
-echo "$(date +%F-%T):mail has been send **************************************!" >> invoke.log
-echo $@ >> invoke.log
+echo "$(date +%F-%T):mail has been send **************************************!" >> $invoke_file
+echo $@ >> $invoke_file
 #cat $smokeping_mail_content |mail -s "$subject" $email_to
-python /smokeping/bin/mailz.py $subject $smokeping_mail_content $email_to $email_from $email_from_password
+python /smokeping/bin/mailz.py "$subject" "$content_send" "$smokeping_mail_content" >> $mail_send_log 2>&1
 exit
 else
-echo "$(date +%F-%T):mail not send #####################################" >> invoke.log
-echo $@ >> invoke.log
+echo "$(date +%F-%T):mail not send #####################################" >> $invoke_file
+#python /smokeping/bin/mailz.py "$subject" "$content_send" "$smokeping_mail_content" >> $mail_send_log 2>&1
+echo $@ >> $invoke_file
 exit
 fi

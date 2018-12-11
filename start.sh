@@ -34,31 +34,30 @@ if [ ! -f /smokeping/install.lock ]; then
         gmake && gmake install
     echo "$(date +%F_%R) [New Install] Copying templated configurations to smokeping."
         cd /smokeping/
-        mkdir cache data var
+        mkdir cache data var log
         mv /smokeping/htdocs/smokeping.fcgi.dist /smokeping/htdocs/smokeping.fcgi
         ln -s /smokeping/htdocs/smokeping.fcgi /smokeping/htdocs/smokeping.cgi
-        mv -f /scripts/config /smokeping/etc/
-        mv -f /scripts/targets /smokeping/etc/
-        mv -f /scripts/send_mail.sh /smokeping/bin/ 
-        mv -f /scripts/mailz.py /smokeping/bin/
-	mv -f /scripts/smokeping_secrets /smokeping/etc/smokeping_secrets
-	mv -f /scripts/slavesecrets /smokeping/etc/slavesecrets
+        cp -rf /scripts/config /smokeping/etc/
+        cp -rf /scripts/targets /smokeping/etc/
+        cp -rf /scripts/send_mail.sh /smokeping/bin/ 
+        cp -rf /scripts/mailz.py /smokeping/bin/
+	cp -rf /scripts/smokeping_secrets /smokeping/etc/smokeping_secrets
+	cp -rf /scripts/slavesecrets /smokeping/etc/slavesecrets
 	sed -i "160i \'--font\'\, \"TITLE:20:WenQuanYi Zen Hei Mono\"\," /smokeping/lib/Smokeping/Graphs.pm
 	mv /smokeping/etc/basepage.html.dist /smokeping/etc/basepage.html
 	sed -i "/SmokePing Latency Page for/s/SmokePing Latency Page for/Smokeping 网络质量监测工具 - /" /smokeping/etc/basepage.html
 	sed -i "/Running on/s/Running on/Running on Docker \<a href\=\"https:\/\/hub.docker.com\/r\/babyfenei\/smokeping\/\"\>babyfenei\/smokeping/" /smokeping/etc/basepage.html
-	sed -i "s/EMAIL_TO/$EMAIL_TO/g" /smokeping/bin/send_mail.sh
-	sed -i "s/EMAIL_FROM_PASSWORD/$EMAIL_FROM_PASSWORD/g" /smokeping/bin/send_mail.sh
-	sed -i "s/EMAIL_FROM_SMTP/$EMAIL_FROM_PASSWORD/g" /smokeping/bin/send_mail.sh
-	sed -i "s/EMAIL_FROM/$EMAIL_FROM/g" /smokeping/bin/send_mail.sh
+	sed -i "s/MAIL_TO/$MAIL_TO/g" /smokeping/bin/mailz.py
+	sed -i "s/MAIL_FROM_PASSWORD/$MAIL_FROM_PASSWORD/g" /smokeping/bin/mailz.py
+	sed -i "s/MAIL_FROM/$MAIL_FROM/g" /smokeping/bin/mailz.py
 	sed -i "s#RRDTOOL_LOGO#$RRDTOOL_LOGO#g" /smokeping/bin/send_mail.sh
 	ln -s /smokeping/bin/* /usr/sbin/
  # CLEANUP
     echo "$(date +%F_%R) [New Install] Removing temp smokeping installation files."
         rm -rf /build/
-        yum remove -y gcc make wget cpp
-        yum clean all
-        rm -rf /var/cache/yum
+        #yum remove -y gcc make wget cpp
+        #yum clean all
+        #rm -rf /var/cache/yum
          # create lock file so this is not re-ran on restart
     touch /smokeping/install.lock
     echo "$(date +%F_%R) [New Install] Creating lock file, smokeping setup complete."
@@ -77,12 +76,12 @@ if [ ! -f /etc/httpd/conf.d/smokeping.conf ]; then
 		echo "$(date +%F_%R) [Note] Copy http config."
 		echo "$(date +%F_%R) [Note] Create htpasswd file."
 		cp -rf /scripts/smokeping_auth.conf /etc/httpd/conf.d/smokeping.conf
-		echo "htpasswd -bc /smokeping/etc/htpasswd HTTP_USER HTTP_PASSWORD" > /smokeping/bin/create_user.sh
+		echo "htpasswd -bc /smokeping/etc/.htpasswd HTTP_USER HTTP_PASSWORD" > /smokeping/bin/create_user.sh
 		sed -i "s/HTTP_USER/$HTTP_USER/g" /etc/httpd/conf.d/smokeping.conf
 		sed -i "s/HTTP_USER/$HTTP_USER/g" /smokeping/bin/create_user.sh
 		sed -i "s/HTTP_PASSWORD/$HTTP_PASSWORD/g" /smokeping/bin/create_user.sh
 		bash /smokeping/bin/create_user.sh
-		chmod 600 /smokeping/etc/htpasswd
+		chmod 600 /smokeping/etc/.htpasswd
 	else
 		echo "$(date +%F_%R) [Note] Copy http config."
 		cp -rf /scripts/smokeping.conf /etc/httpd/conf.d/smokeping.conf

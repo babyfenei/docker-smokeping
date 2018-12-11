@@ -48,10 +48,10 @@ Example:
     -p 80:80 \
     --env="TZ=Asia/Shanghai" \
     --env="RRDTOOL_LOGO=Smokeping2.7.2/rrdtool1.4.9-BY:Fenei" \
-    --env="EMAIL_TO=alert@mail.com" \
-    --env="EMAIL_FROM=alert_from@mail.com" \
-    --env="EMAIL_FROM_PASSWORD=somepassword" \
-    --env="EMAIL_FROM_SMTP=smtp.mail.com" \
+    --env="MAIL_TO=alert@mail.com" \
+    --env="MAIL_FROM=alert_from@mail.com" \
+    --env="MAIL_FROM_PASSWORD=somepassword" \
+    --env="MAIL_FROM_SMTP=smtp.mail.com" \
     --env="HTTP_USER=admin" \
     --env="HTTP_PASSWORD=admin@123" \
     -v '/data/smokeping':'/smokeping':'rw' \
@@ -65,10 +65,10 @@ You can modify the contents of the variable as needed. If there is no modificati
 |:------:|:----:|:-----|
 |TZ|Asia/Shanghai|Smokeping server time zone, viewable in /usr/share/zoneinfo|
 |RRDTOOL_LOGO|Docker-Smokeping2.7.2/Rrdtool1.4.9-BY:Fenei|Rrdtool logo, you can modify the watermark on the right side of Smokeping graphics, be careful not to enter #|
-|EMAIL_TO|alert@mail.com|Fault alarm notification mailbox|
-|EMAIL_FROM|alert_from@mail.com|Alarm source email address|
-|EMAIL_FROM_PASSWORD|somepassword|Alarm source email password|
-|EMAIL_FROM_SMTP|smtp.mail.com|Alarm sending source mailbox SMTP address|
+|MAIL_TO|alert@mail.com|Fault alarm notification mailbox|
+|MAIL_FROM|alert_from@mail.com|Alarm source email address|
+|MAIL_FROM_PASSWORD|somepassword|Alarm source email password|
+|MAIL_FROM_SMTP|smtp.mail.com|Alarm sending source mailbox SMTP address|
 |HTTP_USER|admin|Apache web login username|
 |HTTP_PASSWORD|admin@123|Apache web login password|
 
