@@ -42,7 +42,6 @@ if [ ! -f /smokeping/install.lock ]; then
         cp -rf /scripts/send_mail.sh /smokeping/bin/ 
         cp -rf /scripts/mailz.py /smokeping/bin/
         cp -rf /scripts/maily.sh /smokeping/bin/
-        cp -rf /scripts/sendEmail /usr/bin/
 	cp -rf /scripts/smokeping_secrets /smokeping/etc/smokeping_secrets
 	cp -rf /scripts/slavesecrets /smokeping/etc/slavesecrets
 	sed -i "160i \'--font\'\, \"TITLE:20:WenQuanYi Zen Hei Mono\"\," /smokeping/lib/Smokeping/Graphs.pm
@@ -84,7 +83,6 @@ if [ ! -f /etc/httpd/conf.d/smokeping.conf ]; then
 		echo "$(date +%F_%R) [Note] Create htpasswd file."
 		cp -rf /scripts/smokeping_auth.conf /etc/httpd/conf.d/smokeping.conf
 		echo "htpasswd -bc /smokeping/etc/.htpasswd HTTP_USER HTTP_PASSWORD" > /smokeping/bin/create_user.sh
-		sed -i "s/HTTP_USER/$HTTP_USER/g" /etc/httpd/conf.d/smokeping.conf
 		sed -i "s/HTTP_USER/$HTTP_USER/g" /smokeping/bin/create_user.sh
 		sed -i "s/HTTP_PASSWORD/$HTTP_PASSWORD/g" /smokeping/bin/create_user.sh
 		bash /smokeping/bin/create_user.sh
@@ -102,6 +100,7 @@ chmod 600 /smokeping/etc/slavesecrets
 chmod +x /smokeping/bin/send_mail.sh
 chmod +x /smokeping/bin/mailz.py
 chmod +x /smokeping/bin/maily.sh
+cp -rf /scripts/sendEmail /usr/bin/
 chmod +x /usr/bin/sendEmail
 chown -R apache:apache /smokeping/
 
