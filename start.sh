@@ -86,7 +86,6 @@ if [ ! -f /etc/httpd/conf.d/smokeping.conf ]; then
 		sed -i "s/HTTP_USER/$HTTP_USER/g" /smokeping/bin/create_user.sh
 		sed -i "s/HTTP_PASSWORD/$HTTP_PASSWORD/g" /smokeping/bin/create_user.sh
 		bash /smokeping/bin/create_user.sh
-		chmod 600 /smokeping/etc/.htpasswd
 	else
 		echo "$(date +%F_%R) [Note] Copy http config."
 		cp -rf /scripts/smokeping.conf /etc/httpd/conf.d/smokeping.conf
