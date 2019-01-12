@@ -14,7 +14,7 @@ DET_IP=$5
 # 自定义变量
 
 smokename="RRDTOOL_LOGO"
-smokeping_mail_content=/smokeping/log/smokeping_mail_content.log
+smokeping_mail_content="/smokeping/log/smokeping_mail_content.$(date +%s%N)"
 invoke_file=/smokeping/log/invoke.log
 mail_send_log=/smokeping/log/send.log
 
@@ -62,20 +62,20 @@ fi
 content_send=`cat $smokeping_mail_content`
 
 # 判断最近10次报警是否包含本次报警主机
-invoke_info=`cat $invoke_file | tail -5 | grep -w $hostname`
+invoke_info=`awk 'BEGIN {"date --date=\"-60 minutes\" +%s"|getline start_time;"date +%s"|getline end_time} start_time <= $3 && $3 <= end_time' $invoke_file|grep -w $hostname`
+#invoke_info=`cat $invoke_file | tail -5 | grep -w $hostname`
 #如果包含退出脚本，不包含则发送邮件
 if [[ -z $invoke_info ]] ;then
-echo "$(date +%F-%T):mail has been send **************************************!" >> $invoke_file
-echo $@ >> $invoke_file
+echo "$(date +'%F %T') $(date +%s) $hostname : mail has been send **************************************!" >> $invoke_file
 #cat $smokeping_mail_content |mail -s "$subject" $email_to
 #python /smokeping/bin/mailz.py "$subject" "$content_send" "$smokeping_mail_content" >> $mail_send_log 2>&1
 /bin/bash /smokeping/bin/maily.sh "$subject" "$content_send" "$smokeping_mail_content" >> $mail_send_log 2>&1
 
 exit
 else
-echo "$(date +%F-%T):mail not send #####################################" >> $invoke_file
+echo "$(date +'%F %T') $(date +%s) $hostname :mail not send #####################################" >> $invoke_file
 #python /smokeping/bin/mailz.py "$subject" "$content_send" "$smokeping_mail_content" >> $mail_send_log 2>&1
 #/bin/bash /smokeping/bin/maily.sh "$subject" "$content_send" "$smokeping_mail_content" >> $mail_send_log 2>&1
-echo $@ >> $invoke_file
 exit
 fi
+rm -rf $smokeping_mail_content
