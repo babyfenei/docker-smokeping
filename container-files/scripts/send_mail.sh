@@ -18,7 +18,6 @@ smokeping_mail_content="/smokeping/log/smokeping_mail_content.$(date +%s%N)"
 invoke_file=/smokeping/log/invoke.log
 mail_send_log=/smokeping/log/send.log
 
-
 # 把所有传过来的变量输出到脚本调用日志里，方便统计和问题排查
 #echo "$(date +%F-%T)" >> invoke.log
 #echo $@ >> invoke.log

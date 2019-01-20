@@ -94,6 +94,7 @@ fi
 
 # correcting file permissions
 echo "$(date +%F_%R) [Note] Setting smokeping file permissions."
+mkdir -p /smokeping/log/
 chmod 600 /smokeping/etc/smokeping_secrets
 chmod 600 /smokeping/etc/slavesecrets
 chmod +x /smokeping/bin/send_mail.sh
