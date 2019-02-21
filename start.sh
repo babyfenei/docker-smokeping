@@ -26,7 +26,12 @@ fi
 if [ ! -f /smokeping/install.lock ]; then
     echo "$(date +%F_%R) [New Install] Lock file does not exist - new install."
     echo "$(date +%F_%R) [New Install] Extracting and installing SMOKEPING files"
-        # 编译安装 Smokeping
+        
+	if [ ! -f /smokeping/etc/targets ]; then
+		\cp -rf /smokeping/etc/targets  /tmp/targets
+		rm -rf /smokeping/
+	fi
+	# 编译安装 Smokeping
         cd /build
         tar xvf smokeping-2.7.3.tar.gz && cd smokeping-2.7.3
         export PERL5LIB=/smokeping/thirdparty/lib/perl5/
@@ -65,7 +70,10 @@ if [ ! -f /smokeping/install.lock ]; then
         #yum clean all
         #rm -rf /var/cache/yum
          # create lock file so this is not re-ran on restart
-    touch /smokeping/install.lock
+    	touch /smokeping/install.lock
+	if [ ! -f /tmp/targets ]; then
+		\cp -rf /tmp/targets /smokeping/etc/targets 	
+	fi
     echo "$(date +%F_%R) [New Install] Creating lock file, smokeping setup complete."
 else
     echo "$(date +%F_%R) [Note] smokeping has installed in this server."
