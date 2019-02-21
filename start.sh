@@ -28,7 +28,7 @@ if [ ! -f /smokeping/install.lock ]; then
     echo "$(date +%F_%R) [New Install] Extracting and installing SMOKEPING files"
         # 编译安装 Smokeping
         cd /build
-        tar xvf smokeping-2.7.2.tar.gz && cd smokeping-2.7.2
+        tar xvf smokeping-2.7.3.tar.gz && cd smokeping-2.7.3
         export PERL5LIB=/smokeping/thirdparty/lib/perl5/
         ./configure --prefix=/smokeping 
         gmake && gmake install
