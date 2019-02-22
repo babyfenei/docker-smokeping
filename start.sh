@@ -27,7 +27,7 @@ if [ ! -f /smokeping/install.lock ]; then
     echo "$(date +%F_%R) [New Install] Lock file does not exist - new install."
     echo "$(date +%F_%R) [New Install] Extracting and installing SMOKEPING files"
         
-	if [ ! -f /smokeping/etc/targets ]; then
+	if [ -f /smokeping/etc/targets ]; then
 		\cp -rf /smokeping/etc/targets  /tmp/targets
 		rm -rf /smokeping/
 	fi
@@ -71,7 +71,7 @@ if [ ! -f /smokeping/install.lock ]; then
         #rm -rf /var/cache/yum
          # create lock file so this is not re-ran on restart
     	touch /smokeping/install.lock
-	if [ ! -f /tmp/targets ]; then
+	if [ -f /tmp/targets ]; then
 		\cp -rf /tmp/targets /smokeping/etc/targets 	
 	fi
     echo "$(date +%F_%R) [New Install] Creating lock file, smokeping setup complete."
