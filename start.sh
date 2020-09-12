@@ -114,6 +114,7 @@ chown -R apache:apache /smokeping/
 
 pkill httpd
 pkill smokeping
+apache2ctl stop
 rm -rf /var/run/httpd/*
 
 # start syslog service
