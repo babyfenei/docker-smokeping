@@ -112,10 +112,13 @@ cp -rf /scripts/sendEmail /usr/bin/
 chmod +x /usr/bin/sendEmail
 chown -R apache:apache /smokeping/
 
+pkill httpd
+pkill smokeping
+rm -rf /var/run/httpd/*
+
 # start syslog service
 echo "$(date +%F_%R) [Note] Starting smokeping service."
 /smokeping/bin/smokeping &
-
 
 # start web service
 echo "$(date +%F_%R) [Note] Starting httpd service."
