@@ -1,4 +1,4 @@
-FROM centos7
+FROM centos7.7.1908
 
 MAINTAINER Fenei <babyfenei@qq.com>
 
