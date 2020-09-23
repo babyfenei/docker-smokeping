@@ -13,22 +13,22 @@ yum install -y wget tzdata gcc make httpd httpd-devel mod_ssl glibc-devel libpng
 pango-devel libxml2-devel perl-ExtUtils-CBuilder perl-ExtUtils-MakeMaker \
 perl-LWP-Protocol-https perl-CPAN perl-Module-Build perl-Test-RequiresInternet \
 perl-Test-Warn perl-Sys-Syslog openssl openssl-devel tcptraceroute  wqy-zenhei-fonts \
-popt-devel file libidn-devel mtr kde-l10n-Chinese glibc-common
+popt-devel file libidn-devel mtr kde-l10n-Chinese glibc-common && \
+yum clean all && rm -rf /var/cache/yum/*
 
 VOLUME ["/smokeping/"]
 
 COPY container-files / 
 
 ENV 	TZ=Asia/Shanghai \
-	pythonpath=/usr/bin/python \
 	RRDTOOL_LOGO=Docker-Smokeping2.7.3/rrdtool1.4.9-BY:Fenei \
 	MAIL_TO=alert@mail.com \
 	MAIL_FROM=alert_from@qq.com \
 	MAIL_FROM_PASSWORD=somepassword \
 	MAIL_FROM_SERVER=smtp.qq.com:587 \
 	HTTP_USER=admin \
-	HTTP_PASSWORD=admin@123 \
-	LANG=C.UTF-8 
+	HTTP_PASSWORD=admin@123 
+
 
 
 RUN \
