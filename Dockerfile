@@ -20,13 +20,19 @@ VOLUME ["/smokeping/"]
 COPY container-files / 
 
 ENV 	TZ=Asia/Shanghai \
-	pythonpath=/usr/bin/python
-	#LANG=C.UTF-8 \
-	#PYTHONIOENCODING=UTF-8 \
-	#PYTHONCOERCECLOCALE=UTF-8
+	pythonpath=/usr/bin/python \
+	RRDTOOL_LOGO=Docker-Smokeping2.7.3/rrdtool1.4.9-BY:Fenei \
+	MAIL_TO=alert@mail.com \
+	MAIL_FROM=alert_from@qq.com \
+	MAIL_FROM_PASSWORD=somepassword \
+	MAIL_FROM_SERVER=smtp.qq.com:587 \
+	HTTP_USER=admin \
+	HTTP_PASSWORD=admin@123 \
+	LANG=C.UTF-8 
+
 
 RUN \
-#echo 'LANG="C.UTF-8"'>/etc/locale && source /etc/profile && \
+echo 'LANG="C.UTF-8"'>/etc/locale && source /etc/profile && \
 cp -rf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
 rm -f /etc/httpd/conf.d/welcome.conf && \
 # 编译安装 Fping
@@ -53,12 +59,6 @@ ln -s /usr/local/bin/echoping /usr/sbin/echoping
 #pip install --upgrade pip && \
 #pip install zmail && \
 
-
-ENV 	RRDTOOL_LOGO=Docker-Smokeping2.7.2/rrdtool1.4.9-BY:Fenei \
-	MAIL_TO=alert@mail.com \
-	MAIL_FROM=alert_from@qq.com \
-	MAIL_FROM_PASSWORD=somepassword \
-	MAIL_FROM_SERVER=smtp.qq.com:587
 
 EXPOSE 80
 
