@@ -1,0 +1,84 @@
+version: '3.6'
+
+
+services:
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    restart: always
+    privileged: true
+    user: root
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    links:
+      - pushgateway
+    expose:
+      - 9090
+    networks:
+      - smokeping_backend
+    volumes:
+      - /data/prometheus-data:/prometheus:rw
+      - ./conf.yml:/etc/prometheus/prometheus.yml
+    
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: always
+    privileged: true
+    user: root
+    ports:
+      - 3000:3000
+    links:
+      - prometheus
+    networks:
+      - smokeping_frontend
+      - smokeping_backend
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin@123
+    volumes:
+      - /data/grafana-data:/var/lib/grafana:rw
+      - /data/log/grafana:/var/log/grafana:rw
+
+  pushgateway:
+    image: prom/pushgateway
+    container_name: pushgateway
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai 
+    expose:
+      - 9091
+    networks:
+      - smokeping_backend
+      
+  smokeping:
+    #build: .
+    image: babyfenei/smokeping
+    container_name: smokeping
+    restart: always
+    privileged: true
+    user: root
+    ports:
+      - 80:80
+    links:
+      - pushgateway
+    networks:
+      - smokeping_frontend
+      - smokeping_backend
+    volumes:
+      - /data/smokeping:/smokeping:rw
+    environment:
+      - TZ=Asia/Shanghai
+      - RRDTOOL_LOGO=Smokeping2.8.2/rrdtool1.4.9-BY:Fenei
+      - MAIL_TO=alert@mail.com
+      - MAIL_FROM=alert_from@qq.com
+      - MAIL_FROM_PASSWORD=somepassword
+      - MAIL_FROM_SERVER=smtp.qq.com:587
+      - HTTP_USER=admin
+      - HTTP_PASSWORD=admin@123
+networks:
+  smokeping_frontend:
+    driver: bridge
+  smokeping_backend:
+    driver: bridge
+

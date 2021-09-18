@@ -1,0 +1,112 @@
++ DNS
+menu = 全球公共DNS网络监控
+title = 全球公共DNS网络监控
+#slaves = aliyun template SH_youfu_CT_Proxy
+#alerts = hostdown,hightloss
+#alerts = hostdown,hightloss,lossdetect,someloss,rttdetect
+
+++ gg
+menu = 公共DNS(绘图压力大－勿点击)
+title = 公共DNS网络监控列表
+host = /DNS/gg/dns-1 /DNS/gg/dns-2 /DNS/gg/dns-3 /DNS/gg/dns-4 /DNS/gg/dns-5 /DNS/gg/dns-6 /DNS/gg/dns-7 /DNS/gg/dns-8 /DNS/gg/dns-9 /DNS/gg/dns-10 /DNS/gg/dns-11 /DNS/gg/dns-12 /DNS/gg/dns-13 /DNS/gg/dns-14 /DNS/gg/dns-15 /DNS/gg/dns-16 /DNS/gg/dns-17 /DNS/gg/dns-18 /DNS/gg/dns-19 /DNS/gg/dns-20 /DNS/gg/dns-21 /DNS/gg/dns-22 /DNS/gg/dns-23 /DNS/gg/dns-24
+
++++ dns-1
+menu = 江西移动-211.141.90.68
+title = 江西移动-211.141.90.68
+host = 211.141.90.68
++++ dns-2
+menu = 江西电信-202.101.224.68
+title = 江西电信-202.101.224.68
+host = 202.101.224.68
++++ dns-3
+menu = 江西联通-220.248.192.12
+title = 江西联通-220.248.192.12
+host = 220.248.192.12
++++ dns-4
+menu = 114-DNS-114.114.114.114
+title = 114-DNS-114.114.114.114
+host = 114.114.114.114
++++ dns-5
+menu = 114安全版-114.114.114.119
+title = 114安全版-114.114.114.119
+host = 114.114.114.119
+
++++ dns-6
+menu = 阿里-223.5.5.5
+title = 阿里-223.5.5.5
+host = 223.5.5.5
++++ dns-7
+menu = 百度-180.76.76.76
+title = 百度-180.76.76.76
+host = 180.76.76.76
++++ dns-8
+menu = DNSPOD-119.29.29.29
+title = DNSPOD-119.29.29.29
+host = 119.29.29.29
++++ dns-9
+menu = CNNIC-1.2.4.8
+title = CNNIC-1.2.4.8
+host = 1.2.4.8
++++ dns-10
+menu = DNS派-218.30.118.6
+title = DNS派-218.30.118.6
+host = 218.30.118.6
+
++++ dns-11
+menu = 谷歌-8.8.8.8
+title = 谷歌-8.8.8.8
+host = 8.8.8.8
++++ dns-12
+menu = IBMQ9-9.9.9.9
+title = IBMQ9-9.9.9.9
+host = 9.9.9.9
++++ dns-13
+menu = CF-1.1.1.1
+title = CF-1.1.1.1
+host = 1.1.1.1
++++ dns-14
+menu = 科莫多-8.26.56.26
+title = 科莫多-8.26.56.26
+host = 8.26.56.26
+
++++ dns-15
+menu = GTEI-4.2.2.1
+title = GTEI-4.2.2.1
+host = 4.2.2.1
++++ dns-16
+menu = PCCW-205.252.144.228
+title = PCCW-205.252.144.228
+host = 205.252.144.228
++++ dns-17
+menu = HKIX-202.181.224.2
+title = HKIX-202.181.224.2
+host = 202.181.224.2
++++ dns-18
+menu = 澳门-202.175.3.8
+title = 澳门-202.175.3.8
+host = 202.175.3.8
++++ dns-19
+menu = 中华电信-168.95.192.1
+title = 中华电信-168.95.192.1
+host = 168.95.192.1
++++ dns-20
+menu = 英国-193.0.14.129
+title = 英国-193.0.14.129
+host = 193.0.14.129
++++ dns-21
+menu = 日本-202.12.27.33
+title = 日本-202.12.27.33
+host = 202.12.27.33
++++ dns-22
+menu = 韩国-164.124.101.31
+title = 韩国-164.124.101.31
+host = 164.124.101.31
+
++++ dns-23
+menu = 洛杉矶hostspace-162.212.181.53
+title = 洛杉矶hostspace-162.212.181.53
+host = 162.212.181.53
++++ dns-24
+menu = 洛杉矶hostspace-1-192.126.112.53
+title = 洛杉矶hostspace-2-192.126.112.53
+host = 192.126.112.53

@@ -1,0 +1,160 @@
+++ TELCOM 
+menu = 电信 
+title = 电信 
+host = /IDC/TELCOM/beijing   /IDC/TELCOM/tianjin   /IDC/TELCOM/hebei   /IDC/TELCOM/neimenggu   /IDC/TELCOM/liaoning   /IDC/TELCOM/heilongjiang   /IDC/TELCOM/jilin   /IDC/TELCOM/shandong   /IDC/TELCOM/shanxi   /IDC/TELCOM/shanghai   /IDC/TELCOM/zhejiang   /IDC/TELCOM/jiangsu   /IDC/TELCOM/anhui   /IDC/TELCOM/jiangxi   /IDC/TELCOM/fujian   /IDC/TELCOM/henan   /IDC/TELCOM/hubei   /IDC/TELCOM/hunan   /IDC/TELCOM/guangdong   /IDC/TELCOM/guangxi   /IDC/TELCOM/hainan   /IDC/TELCOM/sichuan   /IDC/TELCOM/chongqing   /IDC/TELCOM/guizhou   /IDC/TELCOM/yunnan   /IDC/TELCOM/xizang   /IDC/TELCOM/shaanxi   /IDC/TELCOM/ningxia   /IDC/TELCOM/gansu   /IDC/TELCOM/qinghai   /IDC/TELCOM/xinjiang  
+
++++ beijing
+menu = 北京
+title = 北京-1.119.0.1
+host = 1.119.0.1
+
++++ tianjin
+menu = 天津
+title = 天津-42.81.0.1
+host = 42.81.0.1
+
++++ hebei
+menu = 河北
+title = 河北-27.128.190.1
+host = 27.128.190.1
+
++++ neimenggu
+menu = 内蒙古
+title = 内蒙古-1.180.0.1
+host = 1.180.0.1
+
++++ liaoning
+menu = 辽宁
+title = 辽宁-59.44.0.1
+host = 59.44.0.1
+
++++ heilongjiang
+menu = 黑龙江
+title = 黑龙江-42.101.37.1
+host = 42.101.37.1
+
++++ jilin
+menu = 吉林
+title = 吉林-36.48.0.1
+host = 36.48.0.1
+
++++ shandong
+menu = 山东
+title = 山东-58.56.0.5
+host = 58.56.0.5
+
++++ shanxi
+menu = 山西
+title = 山西-59.49.3.1
+host = 59.49.3.1
+
++++ shanghai
+menu = 上海
+title = 上海-42.99.16.1
+host = 42.99.16.1
+
++++ zhejiang
+menu = 浙江
+title = 浙江-36.24.25.2
+host = 36.24.25.2
+
++++ jiangsu
+menu = 江苏
+title = 江苏-36.111.192.2
+host = 36.111.192.2
+
++++ anhui
+menu = 安徽
+title = 安徽-36.4.31.0
+host = 36.4.31.0
+
++++ jiangxi
+menu = 江西
+title = 江西-59.52.4.1
+host = 59.52.4.1
+
++++ fujian
+menu = 福建
+title = 福建-27.148.0.3
+host = 27.148.0.3
+
++++ henan
+menu = 河南
+title = 河南-1.192.0.1
+host = 1.192.0.1
+
++++ hubei
+menu = 湖北
+title = 湖北-27.16.132.1
+host = 27.16.132.1
+
++++ hunan
+menu = 湖南
+title = 湖南-36.111.200.1
+host = 36.111.200.1
+
++++ guangdong
+menu = 广东
+title = 广东-14.18.9.1
+host = 14.18.9.1
+
++++ guangxi
+menu = 广西
+title = 广西-58.59.133.65
+host = 58.59.133.65
+
++++ hainan
+menu = 海南
+title = 海南-36.1.0.8
+host = 36.1.0.8
+
++++ sichuan
+menu = 四川
+title = 四川-61.139.2.69
+host = 61.139.2.69
+
++++ chongqing
+menu = 重庆
+title = 重庆-14.104.0.2
+host = 14.104.0.2
+
++++ guizhou
+menu = 贵州
+title = 贵州-36.111.160.1
+host = 36.111.160.1
+
++++ yunnan
+menu = 云南
+title = 云南-42.242.192.1
+host = 42.242.192.1
+
++++ xizang
+menu = 西藏
+title = 西藏-124.31.0.1
+host = 124.31.0.1
+
++++ shaanxi
+menu = 陕西
+title = 陕西-1.81.0.1
+host = 1.81.0.1
+
++++ ningxia
+menu = 宁夏
+title = 宁夏-14.134.0.1
+host = 14.134.0.1
+
++++ gansu
+menu = 甘肃
+title = 甘肃-60.164.34.128
+host = 60.164.34.128
+
++++ qinghai
+menu = 青海
+title = 青海-36.100.32.1
+host = 36.100.32.1
+
++++ xinjiang
+menu = 新疆
+title = 新疆-36.109.0.2
+host = 36.109.0.2
+

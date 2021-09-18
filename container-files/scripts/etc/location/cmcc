@@ -1,0 +1,160 @@
+++ CMCC 
+menu = 移动 
+title = 移动 
+host = /IDC/CMCC/beijing   /IDC/CMCC/tianjin   /IDC/CMCC/hebei   /IDC/CMCC/neimenggu   /IDC/CMCC/liaoning   /IDC/CMCC/heilongjiang   /IDC/CMCC/jilin   /IDC/CMCC/shandong   /IDC/CMCC/shanxi   /IDC/CMCC/shanghai   /IDC/CMCC/zhejiang   /IDC/CMCC/jiangsu   /IDC/CMCC/anhui   /IDC/CMCC/jiangxi   /IDC/CMCC/fujian   /IDC/CMCC/henan   /IDC/CMCC/hubei   /IDC/CMCC/hunan   /IDC/CMCC/guangdong   /IDC/CMCC/guangxi   /IDC/CMCC/hainan   /IDC/CMCC/sichuan   /IDC/CMCC/chongqing   /IDC/CMCC/guizhou   /IDC/CMCC/yunnan   /IDC/CMCC/xizang   /IDC/CMCC/shaanxi   /IDC/CMCC/ningxia   /IDC/CMCC/gansu   /IDC/CMCC/qinghai   /IDC/CMCC/xinjiang  
+
++++ beijing
+menu = 北京
+title = 北京-36.133.64.2
+host = 36.133.64.2
+
++++ tianjin
+menu = 天津
+title = 天津-39.134.140.1
+host = 39.134.140.1
+
++++ hebei
+menu = 河北
+title = 河北-39.134.187.1
+host = 39.134.187.1
+
++++ neimenggu
+menu = 内蒙古
+title = 内蒙古-39.137.88.1
+host = 39.137.88.1
+
++++ liaoning
+menu = 辽宁
+title = 辽宁-39.134.52.1
+host = 39.134.52.1
+
++++ heilongjiang
+menu = 黑龙江
+title = 黑龙江-39.134.62.1
+host = 39.134.62.1
+
++++ jilin
+menu = 吉林
+title = 吉林-39.134.160.1
+host = 39.134.160.1
+
++++ shandong
+menu = 山东
+title = 山东-39.134.146.65
+host = 39.134.146.65
+
++++ shanxi
+menu = 山西
+title = 山西-39.134.26.1
+host = 39.134.26.1
+
++++ shanghai
+menu = 上海
+title = 上海-39.134.86.1
+host = 39.134.86.1
+
++++ zhejiang
+menu = 浙江
+title = 浙江-39.134.179.193
+host = 39.134.179.193
+
++++ jiangsu
+menu = 江苏
+title = 江苏-36.152.44.1
+host = 36.152.44.1
+
++++ anhui
+menu = 安徽
+title = 安徽-39.134.120.1
+host = 39.134.120.1
+
++++ jiangxi
+menu = 江西
+title = 江西-39.134.114.1
+host = 39.134.114.1
+
++++ fujian
+menu = 福建
+title = 福建-39.137.43.1
+host = 39.137.43.1
+
++++ henan
+menu = 河南
+title = 河南-39.134.210.1
+host = 39.134.210.1
+
++++ hubei
+menu = 湖北
+title = 湖北-39.135.20.1
+host = 39.135.20.1
+
++++ hunan
+menu = 湖南
+title = 湖南-39.134.253.1
+host = 39.134.253.1
+
++++ guangdong
+menu = 广东
+title = 广东-39.137.71.129
+host = 39.137.71.129
+
++++ guangxi
+menu = 广西
+title = 广西-36.159.0.1
+host = 36.159.0.1
+
++++ hainan
+menu = 海南
+title = 海南-39.134.136.1
+host = 39.134.136.1
+
++++ sichuan
+menu = 四川
+title = 四川-36.133.63.2
+host = 36.133.63.2
+
++++ chongqing
+menu = 重庆
+title = 重庆-39.134.0.2
+host = 39.134.0.2
+
++++ guizhou
+menu = 贵州
+title = 贵州-39.135.8.1
+host = 39.135.8.1
+
++++ yunnan
+menu = 云南
+title = 云南-39.128.0.0
+host = 39.128.0.0
+
++++ xizang
+menu = 西藏
+title = 西藏-39.135.6.1
+host = 39.135.6.1
+
++++ shaanxi
+menu = 陕西
+title = 陕西-39.134.17.3
+host = 39.134.17.3
+
++++ ningxia
+menu = 宁夏
+title = 宁夏-39.134.93.1
+host = 39.134.93.1
+
++++ gansu
+menu = 甘肃
+title = 甘肃-39.134.32.1
+host = 39.134.32.1
+
++++ qinghai
+menu = 青海
+title = 青海-39.134.159.1
+host = 39.134.159.1
+
++++ xinjiang
+menu = 新疆
+title = 新疆-36.182.144.1
+host = 36.182.144.1
+

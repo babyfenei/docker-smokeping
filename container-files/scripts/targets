@@ -1,0 +1,695 @@
++ ChinaIPs
+menu = 中国各省市IP
+title = 中国各省市IP
+alerts = hostdown,hightloss,lossdetect,someloss,rttdetect
+
+++ ChinaTelecom
+menu = 中国电信
+title = 中国电信
+host = /ChinaIPs/ChinaTelecom/beijing /ChinaIPs/ChinaTelecom/tianjin /ChinaIPs/ChinaTelecom/shanghai /ChinaIPs/ChinaTelecom/zhongqing /ChinaIPs/ChinaTelecom/shanxi /ChinaIPs/ChinaTelecom/hebei /ChinaIPs/ChinaTelecom/liaoning /ChinaIPs/ChinaTelecom/jilin /ChinaIPs/ChinaTelecom/heilongjiang /ChinaIPs/ChinaTelecom/jiangsu /ChinaIPs/ChinaTelecom/anhui /ChinaIPs/ChinaTelecom/shandong /ChinaIPs/ChinaTelecom/zhejiang /ChinaIPs/ChinaTelecom/jiangxi /ChinaIPs/ChinaTelecom/fujian /ChinaIPs/ChinaTelecom/hunan /ChinaIPs/ChinaTelecom/hubei /ChinaIPs/ChinaTelecom/henan /ChinaIPs/ChinaTelecom/guangdong /ChinaIPs/ChinaTelecom/guangxi /ChinaIPs/ChinaTelecom/hainan /ChinaIPs/ChinaTelecom/guizhou /ChinaIPs/ChinaTelecom/yunnan /ChinaIPs/ChinaTelecom/sichuan /ChinaIPs/ChinaTelecom/shaanxi /ChinaIPs/ChinaTelecom/gansu /ChinaIPs/ChinaTelecom/ningxia /ChinaIPs/ChinaTelecom/qinghai /ChinaIPs/ChinaTelecom/xinjiang /ChinaIPs/ChinaTelecom/xicang /ChinaIPs/ChinaTelecom/neimenggu 
+#alerts = hostdown,hightloss,lossdetect,someloss,rttdetect
+
++++ beijing
+menu = 北京
+title = 北京-220.181.16.1
+host = 220.181.16.1
+
+
++++ tianjin
+menu = 天津
+title = 天津-219.150.49.154
+host = 219.150.49.154
+
+
++++ shanghai
+menu = 上海
+title = 上海-101.226.4.6
+host = 101.226.4.6
+
+
++++ zhongqing
+menu = 重庆
+title = 重庆-202.98.40.1
+host = 202.98.40.1
+
+
++++ shanxi
+menu = 山西
+title = 太原-219.149.130.1
+host = 219.149.130.1
+
+
++++ hebei
+menu = 河北
+title = 石家庄-27.184.10.1
+host = 27.184.10.1
+
+
++++ liaoning
+menu = 辽宁
+title = 沈阳-123.177.0.1
+host = 123.177.0.1
+
+
++++ jilin
+menu = 吉林
+title = 长春-222.168.68.158
+host = 222.168.68.158
+
+
++++ heilongjiang
+menu = 黑龙江
+title = 哈尔滨-222.170.0.1
+host = 222.170.0.1
+
+
++++ jiangsu
+menu = 江苏
+title = 南京-180.100.1.1
+host = 180.100.1.1
+
+
++++ anhui
+menu = 安徽
+title = 合肥-61.191.108.201
+host = 61.191.108.201
+
+
++++ shandong
+menu = 山东
+title = 济南-60.235.0.218 
+host = 60.235.0.218 
+
+
++++ zhejiang
+menu = 浙江
+title = 杭州-202.96.102.1
+host = 202.96.102.1
+
+
++++ jiangxi
+menu = 江西
+title = 南昌-202.101.224.68
+host = 202.101.224.68
+
+
++++ fujian
+menu = 福建
+title = 福州-220.160.20.1
+host = 220.160.20.1
+
+
++++ hunan
+menu = 湖南
+title = 长沙-175.0.1.1
+host = 175.0.1.1
+
+
++++ hubei
+menu = 湖北
+title = 武汉-61.184.2.30
+host = 61.184.2.30
+
+
++++ henan
+menu = 河南
+title = 郑州-222.85.12.14
+host = 222.85.12.14
+
+
++++ guangdong
+menu = 广东
+title = 广州-121.8.100.1
+host = 121.8.100.1
+
+
++++ guangxi
+menu = 广西
+title = 南宁-116.252.1.1
+host = 116.252.1.1
+
+
++++ hainan
+menu = 海南
+title = 海口-218.77.152.242
+host = 218.77.152.242
+
+
++++ guizhou
+menu = 贵州
+title = 贵阳-222.86.122.162
+host = 222.86.122.162
+
+
++++ yunnan
+menu = 云南
+title = 昆明-116.52.138.125
+host = 116.52.138.125
+
+
++++ sichuan
+menu = 四川
+title = 成都-118.120.0.1
+host = 118.120.0.1
+
+
++++ shaanxi
+menu = 陕西
+title = 西安-125.76.192.30
+host = 125.76.192.30
+
+
++++ gansu
+menu = 甘肃
+title = 兰州-118.180.1.1
+host = 118.180.1.1
+
+
++++ ningxia
+menu = 宁夏
+title = 银川-202.100.96.68
+host = 202.100.96.68
+
+
++++ qinghai
+menu = 青海
+title = 西宁-223.221.10.1
+host = 223.221.10.1
+
+
++++ xinjiang
+menu = 新疆
+title = 乌鲁木齐-61.128.114.166
+host = 61.128.114.166
+
+
++++ xicang
+menu = 西藏
+title = 拉萨-202.98.224.1
+host = 202.98.224.1
+
+
++++ neimenggu
+menu = 内蒙古
+title = 呼和浩特-42.123.64.1
+host = 42.123.64.1
+
+
+++ ChinaUnicom
+menu = 中国联通
+title = 中国联通
+host = /ChinaIPs/ChinaUnicom/beijing /ChinaIPs/ChinaUnicom/tianjin /ChinaIPs/ChinaUnicom/shanghai /ChinaIPs/ChinaUnicom/zhongqing /ChinaIPs/ChinaUnicom/shanxi /ChinaIPs/ChinaUnicom/hebei /ChinaIPs/ChinaUnicom/liaoning /ChinaIPs/ChinaUnicom/jilin /ChinaIPs/ChinaUnicom/heilongjiang /ChinaIPs/ChinaUnicom/jiangsu /ChinaIPs/ChinaUnicom/anhui /ChinaIPs/ChinaUnicom/shandong /ChinaIPs/ChinaUnicom/zhejiang /ChinaIPs/ChinaUnicom/jiangxi /ChinaIPs/ChinaUnicom/fujian /ChinaIPs/ChinaUnicom/hunan /ChinaIPs/ChinaUnicom/hubei /ChinaIPs/ChinaUnicom/henan /ChinaIPs/ChinaUnicom/guangdong /ChinaIPs/ChinaUnicom/guangxi /ChinaIPs/ChinaUnicom/hainan /ChinaIPs/ChinaUnicom/guizhou /ChinaIPs/ChinaUnicom/yunnan /ChinaIPs/ChinaUnicom/sichuan /ChinaIPs/ChinaUnicom/shaanxi /ChinaIPs/ChinaUnicom/gansu /ChinaIPs/ChinaUnicom/ningxia /ChinaIPs/ChinaUnicom/qinghai /ChinaIPs/ChinaUnicom/xinjiang /ChinaIPs/ChinaUnicom/xicang /ChinaIPs/ChinaUnicom/neimenggu 
+#alerts = hostdown,hightloss,lossdetect,someloss,rttdetect
+
++++ beijing
+menu = 北京
+title = 北京-114.240.0.1
+host = 114.240.0.1
+
+
++++ tianjin
+menu = 天津
+title = 天津-60.30.128.17
+host = 60.30.128.17
+
+
++++ shanghai
+menu = 上海
+title = 上海-58.247.118.70
+host = 58.247.118.70
+
+
++++ zhongqing
+menu = 重庆
+title = 重庆-113.207.122.1
+host = 113.207.122.1
+
+
++++ shanxi
+menu = 山西
+title = 太原-202.99.192.66
+host = 202.99.192.66
+
+
++++ hebei
+menu = 河北
+title = 石家庄-110.240.2.1
+host = 110.240.2.1
+
+
++++ liaoning
+menu = 辽宁
+title = 沈阳-113.224.1.1
+host = 113.224.1.1
+
+
++++ jilin
+menu = 吉林
+title = 长春-218.27.128.14
+host = 218.27.128.14
+
+
++++ heilongjiang
+menu = 黑龙江
+title = 哈尔滨-1.56.0.1
+host = 1.56.0.1
+
+
++++ jiangsu
+menu = 江苏
+title = 南京-122.96.100.1
+host = 122.96.100.1
+
+
++++ anhui
+menu = 安徽
+title = 合肥-36.32.1.1
+host = 36.32.1.1
+
+
++++ shandong
+menu = 山东
+title = 济南-112.230.161.162
+host = 112.230.161.162
+
+
++++ zhejiang
+menu = 浙江
+title = 杭州-101.64.0.1
+host = 101.64.0.1
+
+
++++ jiangxi
+menu = 江西
+title = 南昌-220.248.192.12
+host = 220.248.192.12
+
+
++++ fujian
+menu = 福建
+title = 福州-218.107.221.130
+host = 218.107.221.130
+
+
++++ hunan
+menu = 湖南
+title = 长沙-42.48.2.1
+host = 42.48.2.1
+
+
++++ hubei
+menu = 湖北
+title = 武汉-58.19.114.142
+host = 58.19.114.142
+
+
++++ henan
+menu = 河南
+title = 郑州-115.48.0.1
+host = 115.48.0.1
+
+
++++ guangdong
+menu = 广东
+title = 广州-27.36.0.1
+host = 27.36.0.1
+
+
++++ guangxi
+menu = 广西
+title = 南宁-182.88.0.1
+host = 182.88.0.1
+
+
++++ hainan
+menu = 海南
+title = 海口-150.255.0.1
+host = 150.255.0.1
+
+
++++ guizhou
+menu = 贵州
+title = 贵阳-58.16.1.1
+host = 58.16.1.1
+
+
++++ yunnan
+menu = 云南
+title = 昆明-119.62.1.1
+host = 119.62.1.1
+
+
++++ sichuan
+menu = 四川
+title = 成都-101.204.100.1
+host = 101.204.100.1
+
+
++++ shaanxi
+menu = 陕西
+title = 西安-123.139.1.122
+host = 123.139.1.122
+
+
++++ gansu
+menu = 甘肃
+title = 兰州-124.152.0.1
+host = 124.152.0.1
+
+
++++ ningxia
+menu = 宁夏
+title = 银川-182.54.10.1
+host = 182.54.10.1
+
+
++++ qinghai
+menu = 青海
+title = 西宁-221.207.63.34
+host = 221.207.63.34
+
+
++++ xinjiang
+menu = 新疆
+title = 乌鲁木齐-60.13.129.1
+host = 60.13.129.1
+
+
++++ xicang
+menu = 西藏
+title = 拉萨-103.3.124.1
+host = 103.3.124.1
+
+
++++ neimenggu
+menu = 内蒙古
+title = 呼和浩特-1.24.1.1
+host = 1.24.1.1
+
+
+++ ChinaMobile
+menu = 中国移动
+title = 中国移动
+host = /ChinaIPs/ChinaMobile/beijing /ChinaIPs/ChinaMobile/tianjin /ChinaIPs/ChinaMobile/shanghai /ChinaIPs/ChinaMobile/zhongqing /ChinaIPs/ChinaMobile/shanxi /ChinaIPs/ChinaMobile/hebei /ChinaIPs/ChinaMobile/liaoning /ChinaIPs/ChinaMobile/jilin /ChinaIPs/ChinaMobile/heilongjiang /ChinaIPs/ChinaMobile/jiangsu /ChinaIPs/ChinaMobile/anhui /ChinaIPs/ChinaMobile/shandong /ChinaIPs/ChinaMobile/zhejiang /ChinaIPs/ChinaMobile/jiangxi /ChinaIPs/ChinaMobile/fujian /ChinaIPs/ChinaMobile/hunan /ChinaIPs/ChinaMobile/hubei /ChinaIPs/ChinaMobile/henan /ChinaIPs/ChinaMobile/guangdong /ChinaIPs/ChinaMobile/guangxi /ChinaIPs/ChinaMobile/hainan /ChinaIPs/ChinaMobile/guizhou /ChinaIPs/ChinaMobile/yunnan /ChinaIPs/ChinaMobile/sichuan /ChinaIPs/ChinaMobile/shaanxi /ChinaIPs/ChinaMobile/gansu /ChinaIPs/ChinaMobile/ningxia /ChinaIPs/ChinaMobile/qinghai /ChinaIPs/ChinaMobile/xinjiang /ChinaIPs/ChinaMobile/xicang /ChinaIPs/ChinaMobile/neimenggu 
+#alerts = hostdown,hightloss,lossdetect,someloss,rttdetect
+
++++ beijing
+menu = 北京
+title = 北京-211.136.17.107
+host = 211.136.17.107
+
+
++++ tianjin
+menu = 天津
+title = 天津-211.137.160.185
+host = 211.137.160.185
+
+
++++ shanghai
+menu = 上海
+title = 上海-211.136.183.213
+host = 211.136.183.213
+
+
++++ zhongqing
+menu = 重庆
+title = 重庆-218.201.4.3
+host = 218.201.4.3
+
+
++++ shanxi
+menu = 山西
+title = 太原-47.74.46.59
+host = 47.74.46.59
+
+
++++ hebei
+menu = 河北
+title = 石家庄-211.138.13.66
+host = 211.138.13.66
+
+
++++ liaoning
+menu = 辽宁
+title = 沈阳-211.137.32.178
+host = 211.137.32.178
+
+
++++ jilin
+menu = 吉林
+title = 长春-211.141.16.99
+host = 211.141.16.99
+
+
++++ heilongjiang
+menu = 黑龙江
+title = 哈尔滨-211.138.75.123
+host = 211.138.75.123
+
+
++++ jiangsu
+menu = 江苏
+title = 徐州-221.131.143.1
+host = 211.131.143.1
+
+
++++ anhui
+menu = 安徽
+title = 合肥-120.193.121.34
+host = 120.193.121.34
+
+
++++ shandong
+menu = 山东
+title = 济南-211.137.191.26
+host = 211.137.191.26
+
+
++++ zhejiang
+menu = 浙江
+title = 杭州-211.138.131.2
+host = 211.138.131.2
+
+
++++ jiangxi
+menu = 江西
+title = 南昌-211.141.85.68
+host = 211.141.85.68
+
+
++++ fujian
+menu = 福建
+title = 福州-218.207.217.1
+host = 218.207.217.1
+
+
++++ hunan
+menu = 湖南
+title = 长沙-111.23.10.1
+host = 111.23.10.1
+
+
++++ hubei
+menu = 湖北
+title = 武汉-211.137.77.2
+host = 211.137.77.2
+
+
++++ henan
+menu = 河南
+title = 郑州-111.7.201.1
+host = 111.7.201.1
+
+
++++ guangdong
+menu = 广东
+title = 广州-221.179.38.7
+host = 221.179.38.7
+
+
++++ guangxi
+menu = 广西
+title = 南宁-211.138.245.180
+host = 211.138.245.180
+
+
++++ hainan
+menu = 海南
+title = 海口-221.176.88.95
+host = 221.176.88.95
+
+
++++ guizhou
+menu = 贵州
+title = 贵阳-211.139.5.29
+host = 211.139.5.29
+
+
++++ yunnan
+menu = 云南
+title = 昆明-211.139.29.1
+host = 211.139.29.1
+
+
++++ sichuan
+menu = 四川
+title = 成都-211.137.82.4
+host = 211.137.82.4
+
+
++++ shaanxi
+menu = 陕西
+title = 西安-218.200.6.139
+host = 218.200.6.139
+
+
++++ gansu
+menu = 甘肃
+title = 兰州-218.203.160.194
+host = 218.203.160.194
+
+
++++ ningxia
+menu = 宁夏
+title = 银川-218.203.105.1
+host = 218.203.105.1
+
+
++++ qinghai
+menu = 青海
+title = 西宁-211.138.75.123
+host = 211.138.75.123
+
+
++++ xinjiang
+menu = 新疆
+title = 乌鲁木齐-218.202.152.131
+host = 218.202.152.131
+
+
++++ xicang
+menu = 西藏
+title = 拉萨-211.139.74.1
+host = 211.139.74.1
+
+
++++ neimenggu
+menu = 内蒙古
+title = 呼和浩特-211.138.91.2
+host = 211.138.91.2
+
+
+
+
++ DNS
+menu = 全球公共DNS网络监控
+title = 全球公共DNS网络监控
+#slaves = aliyun template SH_youfu_CT_Proxy
+#alerts = hostdown,hightloss
+#alerts = hostdown,hightloss,lossdetect,someloss,rttdetect
+
+++ gg
+menu = 公共DNS(绘图压力大－勿点击)
+title = 公共DNS网络监控列表
+host = /DNS/gg/dns-1 /DNS/gg/dns-2 /DNS/gg/dns-3 /DNS/gg/dns-4 /DNS/gg/dns-5 /DNS/gg/dns-6 /DNS/gg/dns-7 /DNS/gg/dns-8 /DNS/gg/dns-9 /DNS/gg/dns-10 /DNS/gg/dns-11 /DNS/gg/dns-12 /DNS/gg/dns-13 /DNS/gg/dns-14 /DNS/gg/dns-15 /DNS/gg/dns-16 /DNS/gg/dns-17 /DNS/gg/dns-18 /DNS/gg/dns-19 /DNS/gg/dns-20 /DNS/gg/dns-21 /DNS/gg/dns-22 /DNS/gg/dns-23 /DNS/gg/dns-24
+
++++ dns-1
+menu = 江西移动-211.141.90.68
+title = 江西移动-211.141.90.68
+host = 211.141.90.68
++++ dns-2
+menu = 江西电信-202.101.224.68
+title = 江西电信-202.101.224.68
+host = 202.101.224.68
++++ dns-3
+menu = 江西联通-220.248.192.12
+title = 江西联通-220.248.192.12
+host = 220.248.192.12
++++ dns-4
+menu = 114-DNS-114.114.114.114
+title = 114-DNS-114.114.114.114
+host = 114.114.114.114
++++ dns-5
+menu = 114安全版-114.114.114.119
+title = 114安全版-114.114.114.119
+host = 114.114.114.119
+
++++ dns-6
+menu = 阿里-223.5.5.5
+title = 阿里-223.5.5.5
+host = 223.5.5.5
++++ dns-7
+menu = 百度-180.76.76.76
+title = 百度-180.76.76.76
+host = 180.76.76.76
++++ dns-8
+menu = DNSPOD-119.29.29.29
+title = DNSPOD-119.29.29.29
+host = 119.29.29.29
++++ dns-9
+menu = CNNIC-1.2.4.8
+title = CNNIC-1.2.4.8
+host = 1.2.4.8
++++ dns-10
+menu = DNS派-218.30.118.6
+title = DNS派-218.30.118.6
+host = 218.30.118.6
+
++++ dns-11
+menu = 谷歌-8.8.8.8
+title = 谷歌-8.8.8.8
+host = 8.8.8.8
++++ dns-12
+menu = IBMQ9-9.9.9.9
+title = IBMQ9-9.9.9.9
+host = 9.9.9.9
++++ dns-13
+menu = CF-1.1.1.1
+title = CF-1.1.1.1
+host = 1.1.1.1
++++ dns-14
+menu = 科莫多-8.26.56.26
+title = 科莫多-8.26.56.26
+host = 8.26.56.26
+
++++ dns-15
+menu = GTEI-4.2.2.1
+title = GTEI-4.2.2.1
+host = 4.2.2.1
++++ dns-16
+menu = PCCW-205.252.144.228
+title = PCCW-205.252.144.228
+host = 205.252.144.228
++++ dns-17
+menu = HKIX-202.181.224.2
+title = HKIX-202.181.224.2
+host = 202.181.224.2
++++ dns-18
+menu = 澳门-202.175.3.8
+title = 澳门-202.175.3.8
+host = 202.175.3.8
++++ dns-19
+menu = 中华电信-168.95.192.1
+title = 中华电信-168.95.192.1
+host = 168.95.192.1
++++ dns-20
+menu = 英国-193.0.14.129
+title = 英国-193.0.14.129
+host = 193.0.14.129
++++ dns-21
+menu = 日本-202.12.27.33
+title = 日本-202.12.27.33
+host = 202.12.27.33
++++ dns-22
+menu = 韩国-164.124.101.31
+title = 韩国-164.124.101.31
+host = 164.124.101.31
+
++++ dns-23
+menu = 洛杉矶hostspace-162.212.181.53
+title = 洛杉矶hostspace-162.212.181.53
+host = 162.212.181.53
++++ dns-24
+menu = 洛杉矶hostspace-1-192.126.112.53
+title = 洛杉矶hostspace-2-192.126.112.53
+host = 192.126.112.53

@@ -1,0 +1,3 @@
+* * * * *  root  /usr/bin/python3 /smokeping/bin/collection_to_prometheus.py 2>&1
+0 0 * * 1  root  /usr/bin/python3 /smokeping/bin/ipgrab.py 2>&1
+*/5     *       *       *       *       root /usr/sbin/ntpdate time.windows.com > /dev/null 2>&1

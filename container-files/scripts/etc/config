@@ -1,0 +1,159 @@
+*** General ***
+
+owner = Peter Random
+contact = some@address.nowhere
+mailhost = my.mail.host
+#sendmail = /usr/sbin/sendmail
+# NOTE: do not put the Image Cache below cgi-bin
+# since all files under cgi-bin will be executed ... this is not
+# good for images.
+imgcache = /smokeping/cache
+imgurl = cache
+datadir = /smokeping/data
+piddir = /smokeping/var
+cgiurl = http://some.url/smokeping.cgi
+smokemail = /smokeping/etc/smokemail.dist
+tmail = /smokeping/etc/tmail.dist
+# specify this to get syslog logging
+syslogfacility = local0
+# each probe is now run in its own process
+# disable this to revert to the old behaviour
+# concurrentprobes = no
+
+*** Alerts ***
+to = |/smokeping/bin/send_mail.sh
+from = smokealert@company.xy
+
++hostdown
+type = loss
+# in percent
+pattern = ==0%,==0%,==0%, ==U
+comment = 对端无响应
+
++hightloss
+type = loss
+# in percent
+pattern = ==0%,==0%,==0%,==0%,>10%,>10%,>10%
+comment = 连续3次采样-丢包率超过10%
+
++lossdetect
+type = loss
+# in percent
+pattern = ==0%,==0%,==0%,==0%,>0%,>0%,>0%
+comment = 连续3次采样-存在丢包
+
++someloss
+type = loss
+# in percent
+pattern = >0%,*12*,>0%,*12*,>0%
+comment = 间断性丢包
+
++rttdetect
+type = rtt
+# in milli seconds
+pattern = <100,<100,<100,<100,<100,<150,>150,>150,>150
+comment = 连续3次采样延迟增大-超过150ms
+
+*** Database ***
+
+step     = 60
+pings    = 4
+
+# consfn mrhb steps total
+
+AVERAGE  0.5   1  1008
+AVERAGE  0.5  12  4320
+    MIN  0.5  12  4320
+    MAX  0.5  12  4320
+AVERAGE  0.5 144   720
+    MAX  0.5 144   720
+    MIN  0.5 144   720
+
+*** Presentation ***
+charset = utf-8
+template = /smokeping/etc/basepage.html
+
++ charts
+
+menu = 排行榜
+title = 排行榜
+
+++ stddev
+sorter = StdDev(entries=>4)
+title = 综合指数排行
+menu = 综合指数排行
+format = 综合指数 %f
+
+++ max
+sorter = Max(entries=>5)
+title = 最大延迟排行
+menu = 最大延迟排行
+format = 最大延迟时间 %f 秒
+
+++ loss
+sorter = Loss(entries=>5)
+title = 丢包率排行
+menu = 丢包率排行
+format = 丢包 %f
+
+++ median
+sorter = Median(entries=>5)
+title = 平均延迟排行
+menu = 平均延迟排行
+format = 平均延迟 %f 秒
+
++ overview
+
+width = 860
+height = 150
+range = 10h
+
++ detail
+
+width = 860
+height = 200
+unison_tolerance = 2
+
+"Last 3 Hours"    3h
+"Last 30 Hours"   30h
+"Last 10 Days"    10d
+"Last 30 Days"   30d
+"Last 90 Days"   90d
+#+ hierarchies
+#++ owner
+#title = Host Owner
+#++ location
+#title = Location
+
+*** Probes ***
+
++ FPing
+
+binary = /usr/sbin/fping
+
+*** Slaves ***
+secrets=/smokeping/etc/smokeping_secrets
++boomer
+display_name=boomer
+color=0000ff
+
++slave2
+display_name=another
+color=00ff00
+
+*** Targets ***
+
+probe = FPing
+
+menu = Top
+title = IDC网络节点质量监控
+remark = Smokeping 网络质量监控系统
+
+
+@include /smokeping/etc/location/tree
+@include /smokeping/etc/location/telcom
+@include /smokeping/etc/location/unicom
+@include /smokeping/etc/location/cmcc
+@include /smokeping/etc/location/custom
+@include /smokeping/etc/location/dns
+

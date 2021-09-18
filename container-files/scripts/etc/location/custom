@@ -1,0 +1,35 @@
+++ custom
+menu = IDC客户
+title = IDC客户
+host = /IDC/custom/beijing /IDC/custom/shaanxi-telecom-dns  /IDC/custom/shaanxi-unioncom-dns /IDC/custom/shaanxi-mobile-dns /IDC/custom/zhejiang-1 /IDC/custom/zhejiang-2
+
+
++++ beijing
+menu = 北京市海淀区 腾讯云
+title = 腾讯云-118.89.212.13
+host = 118.89.212.13
+
++++ shaanxi-telecom-dns
+menu = 陕西电信DNS
+title = 陕西DNS-61.134.1.5
+host = 61.134.1.5
+
++++ shaanxi-unioncom-dns
+menu = 陕西联通DNS
+title = 陕西DNS-221.11.1.67
+host = 221.11.1.67
+
++++ shaanxi-mobile-dns
+menu = 陕西移动DNS
+title = 陕西DNS-211.137.130.3
+host = 211.137.130.3
+
++++ zhejiang-1
+menu = 浙江
+title = 浙江-183.131.25.50
+host = 183.131.25.50
+
++++ zhejiang-2
+menu = 浙江
+title = 浙江-36.97.178.157
+host = 36.97.178.157
